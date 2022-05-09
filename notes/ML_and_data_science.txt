@@ -1,0 +1,13 @@
+----------------------------------------
+Machine learning & Data science Bootcamp
+----------------------------------------
+
+- most essential and difficult thing is the data collection
+- goal is to turn data from use-less to use-full state
+
+Data:
+-----
+structured - sql db (mssql)
+unstructured - nosql db (mongoDB)
+
+

@@ -1,0 +1,6 @@
+.idea
+.pyc
+**.pickle
+**.json
+**.log
+__pycache__/
