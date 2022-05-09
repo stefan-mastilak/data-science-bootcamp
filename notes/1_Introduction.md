@@ -15,8 +15,8 @@ Machine learning:
 -----------------
 - ML is using algorithm to lear different patterns in data to predict results for similar data coming into the algorithm
 - ML lets computers to make decisions about the data
-- ML lets computers to learn from data and they make predictions and decisions
-- ML algorithms are usually called models
+- ML lets computers to learn from data, and they make predictions and decisions
+- ML algorithms are usually called a models
 - ML algorithm finds patterns in data to solve future problems
 
 
