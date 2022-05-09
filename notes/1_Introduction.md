@@ -26,7 +26,7 @@ Machine learning types:
 1) Supervised learning
         - data already have categories, they are labeled
    * Classification (example: decide if this is pear or apple)
-   * Regression (example: predicting stock prises)
+   * Regression (example: predicting stock prices)
 
 2) Unsupervised learning
         - data doesn't have labels or groups
