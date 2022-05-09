@@ -7,8 +7,8 @@ Data:
 - most essential and difficult thing is the data collection
 - goal is to turn data from use-less to use-full state
 
-a) structured - sql db (mssql)
-b) unstructured - nosql db (mongoDB)
+* structured - sql db (mssql)
+* unstructured - nosql db (mongoDB)
 
 
 Machine learning:
@@ -25,16 +25,18 @@ Machine learning types:
 
 1) Supervised learning
         - data already have categories, they are labeled
-    a) Classification (example: decide if this is pear or apple)
-    b) Regression (example: predicting stock prises)
+   * Classification (example: decide if this is pear or apple)
+   * Regression (example: predicting stock prises)
 
 2) Unsupervised learning
         - data doesn't have labels or groups
-    a) Clustering (creating groups)
-    b) Association rule learning
+    * Clustering (creating groups)
+    * Association rule learning
 
 3) Reinforcement
-        - teaching machines trough trials
-        - example: program will learn how to play game by playing it a million times
-    a) Skill acquisition
-    b) Real time learning
+        - teaching machines trough trials (example: program will learn how to play game by playing it a million times)
+    * Skill acquisition
+    * Real time learning
+
+<br></br>
+![machine-learning1](https://user-images.githubusercontent.com/74961891/167394887-80eaea4f-5da6-43cd-8aa3-376d6a3f2658.png)
