@@ -6,9 +6,9 @@ Data:
 -----
 - most essential and difficult thing is the data collection
 - goal is to turn data from use-less to use-full state
-
-* structured - sql db (mssql)
-* unstructured - nosql db (mongoDB)
+- data types:
+    * structured - sql db (mssql)
+    * unstructured - nosql db (mongoDB)
 
 
 Machine learning:
@@ -28,10 +28,12 @@ Machine learning types:
    * Classification (example: decide if this is pear or apple)
    * Regression (example: predicting stock prices)
 
+
 2) Unsupervised learning
         - data doesn't have labels or groups
     * Clustering (creating groups)
     * Association rule learning
+
 
 3) Reinforcement
         - teaching machines trough trials (example: program will learn how to play game by playing it a million times)
