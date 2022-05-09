@@ -38,5 +38,3 @@ Machine learning types:
         - example: program will learn how to play game by playing it a million times
     a) Skill acquisition
     b) Real time learning
-
-
