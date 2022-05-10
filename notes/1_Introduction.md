@@ -2,18 +2,9 @@
 Machine learning & Data science Bootcamp
 ----------------------------------------
 
-Data:
------
-- most essential and difficult thing is the data collection
-- goal is to turn data from use-less to use-full state
-- data types:
-    * structured - sql db (mssql)
-    * unstructured - nosql db (mongoDB)
-
-
 Machine learning:
 -----------------
-- ML is using algorithm to lear different patterns in data to predict results for similar data coming into the algorithm
+- ML is using algorithm to learn different patterns in data to predict results for similar data coming into the algorithm
 - ML lets computers to make decisions about the data
 - ML lets computers to learn from data, and they make predictions and decisions
 - ML algorithms are usually called a models
@@ -24,19 +15,23 @@ Machine learning types:
 -----------------------
 
 1) Supervised learning
-        - data already have categories, they are labeled
+   * labeled data - known inputs and outputs
    * Classification (example: decide if this is pear or apple)
    * Regression (example: predicting stock prices)
 
 
 2) Unsupervised learning
-        - data doesn't have labels or groups
-    * Clustering (creating groups)
+    * unlabeled data - known inputs
+    * Clustering (process of creating groups by finding patterns in data)
     * Association rule learning
 
 
-3) Reinforcement
-        - teaching machines trough trials (example: program will learn how to play game by playing it a million times)
+3) Transfer learning
+   * learning from existing model
+
+
+4) Reinforcement learning
+    * learning trough trials (example: chess play algorithm)
     * Skill acquisition
     * Real time learning
 
