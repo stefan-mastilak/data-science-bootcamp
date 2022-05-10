@@ -137,9 +137,10 @@ Different types of data:
 ################################################################################################################
 
 ## 3) Evaluation
+   * Problem - What defines success in our case?
    * evaluation metric is a measure of how well machine learning algorithm predicts the future
    * there are different evaluation metrics for different machine learning problems  
-   * what defines success?
+   
 
 ### Different types of metrics for Classification:
    * Accuracy
@@ -158,3 +159,74 @@ Different types of data:
 ################################################################################################################
 
 ## 4) Features
+   * Known information about the data are called features
+   * Process of working with features is called feature engineering
+   * Ideal scenario is to have data with the same features
+   * Variables:
+     
+     * feature variables (known data)
+        * numerical features 
+            * numbers - age or body weight, etc.
+        * categorical features 
+            * one thing or another - male or female, smoker or non-smoker, etc.
+        * derived features 
+            * creating new or altering features based on different existing features 
+            * example: I can create derived feature that will tell if patient has visited doctor last year based on the 
+              hospital data. This is the way how you can derive new feature from existing features.
+     
+     * target variables (unknown data) 
+        * this is what we want to predict
+       
+
+   * Example: We want to predict heart disease from patients records containing weight, sex, heart rate and chest pain
+     We call those data feature variables. We want to use feature variables to predict target variables - in our case
+     target variable is a decision if patient have heart disease or not (yes/no)
+     
+
+##########################################################################################################
+
+## 5) Modelling
+   * Problem - What model should we use based on our problem definition and data?
+   * Generalisation - ability of machine learning model to perform well on data it hasn't seen before 
+   * Data split:
+      * Training set - training a model with those data (70-80%)
+      * Validation set - Tune your model on those data (10-15%)
+      * Testing set - Test and compare on those data (10-15%) 
+    
+
+   * Why you need to split your dataset:
+     * it's similar to learning for a math exam. You initially learn from the math
+       lessons materials (training phase). Then you do some practice exams on your own to 
+       verify your gained knowledge (validation phase). Finally, you take a final exam at school (testing phase) to test
+       your knowledge on the examples that you've never seen before. This adaptation that you get from the lessons 
+       materials and practice exams to complete final exam refers to the machine learning as generalisation.
+     * When things go wrong - If your final exam will be same as the practice exam, everybody in the class will
+       pass the math exam with top marks. But, did the students really learn anything?
+     
+
+### a) Choosing and training a model
+   * Dataset: training data
+   * Some models work better than others on different problems  
+   * But which algorithm/model is suitable for my problem?  
+     * structured data:
+        * Decision tree algorithms - Random Forest 
+        * Gradient boosting algorithms - XGBoost, CatBoost
+     * unstructured data:
+        * Deep learning algorithms - Neural networks
+        * Transfer learning
+   * Always start small and build up (add complexity) as you need. If you have a million of records in your initial
+     dataset, you don't need to work with all of them. Start with the 10 thousands and add complexity later on.
+
+
+### b) Tuning a model
+   * Dataset: validation data
+   * Goal is to improve initial performance of the model trained with training dataset
+   * Model can be tuned for different types of data - similar to F1 car that can be tuned for different types of tracks
+      * if you don't have a validation dataset, you can tune up your model with training data 
+   * Machine learning models have hyper-parameters you can adjust
+   * Tuning can take place on training or validation data sets
+
+
+### c) Model comparison
+   * Dataset: test data
+   * You might train a different models on the same data, but how to choose the best one?
