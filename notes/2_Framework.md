@@ -55,26 +55,53 @@ General idea for machine learning framework:
 Types of machine learning problems:
 -----------------------------------
 
-### Supervised learning
-   * you have data and labels
+## 1) Supervised learning
+   * data with labels
    * algorithm tries to use data to predict labels
    * if it guesses a label wrong, algorithm corrects itself and tries again 
    * this active correction is why it's called supervised
-   
+   * purpose of label is to provide a context  
+   * labels might indicate whether a photo contains a bird or car, which words were uttered in an audio recording, 
+     or if an x-ray contains a tumor. Data labeling is required for a variety of use cases including computer vision, 
+     natural language processing, and speech recognition
+     
    #### Classification problem
    Problem - Is this example one thing or another?
 
-   * Binary classification - two options (Does patient have heart disease?)
-   * Multi-class classification - more than two options (What type of breed is this dog?)
+   * Binary classification - two options (Does patient have heart disease based on medical records?)
+   * Multi-class classification - more than two options (What type of breed is this dog based on photo?)
 
    #### Regression problem
    Problem - How much will this house sell for? Or How many people will buy this app?
 
    * In general, we're trying to predict a number here
-   * like number of days, money, clicks etc.
+   * like number of days, sell price of the house, number of clicks or website visits, etc.
 
 
-### Unsupervised learning
-   * Data with no labels
-### Transfer learning
-### Reinforcement learning
+## 2) Unsupervised learning
+   * data has no labels
+   * goal is to find patterns in the data and group similar things together
+   * data in the same group (cluster) will have same labels
+   * clustering is the process of putting groups of similar examples together 
+     
+   * Example 1: You have customer purchase data. You want to send promotion for the summer clothes to the customers.
+     So based on the purchase data you need to split the customers into the two groups. Those who purchase mostly during 
+     the summer, and the second group of customers that purchase mostly in winter. So you will label them as winter and
+     summer customers. Problems like this are also called the clustering
+     
+   * Example 2: Recommendation problem is also unsupervised learning problem (like recommend a next song to play etc.) 
+     
+
+## 3) Transfer learning
+   * type of learning that takes existing model and use its foundational patterns and apply it to the another problem 
+   * Example: You have a model that can detect a car on the picture. You want to create a model that will be able to
+     detect a dog on the picture. You can use existing car model and transfer some useful patterns from that model 
+     to the new one for dogs detection.
+     
+## 4) Reinforcement learning
+   * involves having a computer program performing some actions within a defined space and rewarding it for doing well
+     and punishing it for doing poor. This could be achieved by assigning a score for the performed action. Goal for 
+     the algorithm could be to achieve the highest possible score. 
+   * Example: Good example is teaching algorithm to play chess. If computer wins, algorithm will learn moves that led 
+     to win. Board is a space and actions are movements of pieces on the chess board.
+     
