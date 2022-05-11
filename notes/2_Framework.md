@@ -234,3 +234,5 @@ Different types of data:
    * Testing a model:
       * Underfitting - when training set performance is dramatically higher than a test set performance
       * Overfitting - when test set performance is higher than training set performance 
+      
+ ![image](https://user-images.githubusercontent.com/74961891/167783433-2431b6e8-1173-4207-a338-39b0a52d3dd9.png)
