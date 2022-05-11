@@ -19,7 +19,4 @@ import sklearn
 
 print('hello')
 
-# This is just a text markdown :)
-#
-
 
