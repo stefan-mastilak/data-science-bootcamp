@@ -4,7 +4,7 @@ Machine learning & Data science Bootcamp
 ### Tools:
   
    * Programming language:
-      * Python
+      * Python 3.9
       * software distribution for Anaconda (containing all major data science packages ~3GB) 
       * software distribution for Miniconda (lightweight version of Anaconda ~200MB)
         * conda - package manager
