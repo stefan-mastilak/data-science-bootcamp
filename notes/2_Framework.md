@@ -229,10 +229,48 @@ Different types of data:
 
 ### c) Model comparison
    * Dataset: test data
+   * Keep the test set separate at all costs
    * Test set is like a final exam for a machine learning models  
    * You might train a different models on the same data, but how to choose the best one?
+   
+
    * Testing a model:
-      * Underfitting - when training set performance is dramatically higher than a test set performance
-      * Overfitting - when test set performance is higher than training set performance 
-      
+      * We want to avoid underfitting and overfitting problems
+      * Underfitting: 
+         * Happens when training set performance is dramatically higher than a test set performance
+         * Poor performance on training data means the model hasn’t learned properly and is underfitting
+         * Data mismatch - happens when data you're testing on is different that the data you're training on - having
+                           different features in your testing and training data. Having this kind of mismatch is leadin
+                           to underfitting
+      * Overfitting:
+         * Happens when test set performance is higher than training set performance
+         * Great performance on the training data but poor performance on test data means your model doesn’t generalize well. Your model may be overfitting the training data
+         * Data leakage - happens when some of your test data leaks into your training data, which results in overfitting 
+   
+
+   * Fixes for underfitting:
+      * Try more advanced model
+      * Increase model hyper-parameters
+      * Reduce amount of features - model could struggle to find a patterns in data
+      * Train longer
+       
+
+   * Fixes for underfitting:
+      * Collect more data
+      * Try less advanced model
+
  ![image](https://user-images.githubusercontent.com/74961891/167783433-2431b6e8-1173-4207-a338-39b0a52d3dd9.png)
+
+   * Comparing of models:
+     * Make sure you're comparing apples with apples and oranges with oranges
+     * Meaning that it make sense to compare different models performances that were trained with the same data
+     * One best performance metric does not equal best model
+    
+
+##########################################################################################################
+
+## 6) Experimentation
+   * Problem - What have we tried and what else we can try?
+      * This is iterative process that starts at stage 1 (problem definition) and ends at stage 5 (modeling)
+      * Try different model
+      * Try to change parameters slightly
