@@ -49,7 +49,7 @@ General idea for machine learning framework:
    * how could we improve?
    * what can we try next?
 
-![ml_framework drawio](https://user-images.githubusercontent.com/74961891/167399711-08876d1d-649d-41ad-9b3f-88e240925b28.png)
+![6-step-ml-framework](https://user-images.githubusercontent.com/74961891/167846239-2886a2b7-e756-4f02-a19b-993487b2de9c.png)
 
 ################################################################################################################
 
