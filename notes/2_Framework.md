@@ -229,4 +229,8 @@ Different types of data:
 
 ### c) Model comparison
    * Dataset: test data
+   * Test set is like a final exam for a machine learning models  
    * You might train a different models on the same data, but how to choose the best one?
+   * Testing a model:
+      * Underfitting - when training set performance is dramatically higher than a test set performance
+      * Overfitting - when test set performance is higher than training set performance 
