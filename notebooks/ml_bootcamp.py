@@ -12,14 +12,19 @@
 #     name: python3
 # ---
 
+# ## Heart disease project
+
+# This project is about classifying whether or not a patient has heart disease
+
 import numpy as np
-import pandas
+import pandas as pd
 import matplotlib
 import sklearn
 
-print('hello')
+# import data from csv file:
 
-# This is just a text markdown :)
-#
+df = pd.read_csv("datasets/heart-disease.csv")
 
+df.head(10)
 
+df.target.value_counts().plot(kind="bar")
