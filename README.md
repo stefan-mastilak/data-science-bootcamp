@@ -7,3 +7,12 @@ LINK: https://visma.udemy.com/course/complete-machine-learning-and-data-science-
 * ML playground: https://teachablemachine.withgoogle.com/train
 * Teachable machine: https://teachablemachine.withgoogle.com/train
 
+### Prerequisites:
+* Python:
+    * Python 3.9 installation
+    * Or software distribution for Anaconda 
+    * Or software distribution for Miniconda (lightweight Anaconda)
+       * link: https://docs.conda.io/en/latest/miniconda.html 
+       * conda - package manager
+* Data analysis packages - numpy, matplotlib, pandas
+* Machine learning packages - tensorflow, pytorch, scikit-learn, xgboost, catboost
