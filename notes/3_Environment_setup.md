@@ -10,7 +10,8 @@ Machine learning & Data science Bootcamp
         * conda - package manager
         * Download Miniconda here: https://docs.conda.io/en/latest/miniconda.html
         * venv with conda: 
-          * conda create --prefix <path_to_venv> matplotlib pandas numpy scikit-learn
+          * conda create --prefix <path_to_venv> matplotlib pandas numpy scikit-learn jupyter
+          * conda install <some_package>
           * conda activate <path_to_venv>
           * conda deactivate
         
