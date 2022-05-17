@@ -25,8 +25,8 @@ Machine learning & Data science Bootcamp
     
 ### Importing and exporting data
 
-   * Importing: car_sales = pd.read_csv("path\to\file")
-   * Exporting: car_sales.to_csv("data/exported-car-sales.csv"
+   * Importing: car_sales = pd.read_csv("path\to\file.csv")
+   * Exporting: car_sales.to_csv("path\to\file.csv")
    * Importing from URL: car_sales = pd.read_csv("https://raw.githubusercontent.com/myfile.csv")
 
 ### Describe data
