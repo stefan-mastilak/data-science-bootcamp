@@ -12,9 +12,15 @@ notebook:
 
 notebook_save:
 	jupytext --to py notebooks/ml_bootcamp.ipynb
+	jupytext --to py notebooks/pandas_introduction.ipynb
+	jupytext --to py notebooks/pandas_exercises.ipynb
 
 notebook_save_py:
 	jupytext --output notebooks/ml_bootcamp.py notebooks/ml_bootcamp.ipynb
+	jupytext --output notebooks/pandas_introduction.py notebooks/pandas_introduction.ipynb
+	jupytext --output notebooks/pandas_introduction.py notebooks/pandas_exercises.ipynb
 
 notebook_load:
 	jupytext --to notebook notebooks/ml_bootcamp.py
+	jupytext --to notebook notebooks/pandas_introduction.py
+	jupytext --to notebook notebooks/pandas_exercises.py
