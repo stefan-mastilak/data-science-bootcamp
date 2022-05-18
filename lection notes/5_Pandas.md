@@ -8,7 +8,9 @@ Machine learning & Data science Bootcamp
    * it helps you get your data ready for a machine learning
    * everything will be explained in the notebooks/pandas_introduction.ipynb 
 
+<br></br>
 <img width="993" alt="pandas-anatomy-of-a-dataframe" src="https://user-images.githubusercontent.com/74961891/168790140-a9c7f07b-412b-4fcc-8dc5-f84d83701822.png">
+<br></br>
 
 ### Main data types in Pandas:
 
