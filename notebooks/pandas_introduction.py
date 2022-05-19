@@ -43,12 +43,39 @@ a1.dtype, a2.dtype, a3.dtype
 # Show number of elements in arrays:
 a1.size, a2.size, a3.size
 
-# +
-# Create a Pandas DataFrame from 
+# ## Creating arrays
+
+# Create a Pandas DataFrame from numpy array
 import pandas as pd
-
 df = pd.DataFrame(a2)
-df
-# -
 
+# Creating numpy array:
+sample_array = np.array([1,2,3])
+sample_array
 
+# ones() function will return a new array of given shape and type filled with ones
+ones = np.ones(shape=(2,3), dtype=int)
+ones
+
+# zeroes() function will return a new array of given shape and type filled with zeros
+zeros = np.zeros(shape=(2,3), dtype=float)
+zeros
+
+# arrange() function to create array from range like start-stop-step
+range_array = np.arange(0,10,2)
+range_array
+
+# random array using random.randint() function to create integers in range from low to high
+random_array = np.random.randint(low=0, high=10, size=(3,5))
+random_array
+
+# random array using random.random() function to create floats in the half-open interval from 0 to 1
+random_array2 = np.random.random((2,3))
+random_array2
+
+# random array using random.rand() function to create random values in the given shape
+random_array3 = np.random.rand(2,3)
+random_array3
+
+# +
+# Pseudo-random numbers

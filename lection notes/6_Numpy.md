@@ -51,18 +51,72 @@ a1.dtype, a2.dtype, a3.dtype
 # Show number of elements in arrays:
 a1.size, a2.size, a3.size
 # console >> (3, 6, 18)
+
+# Create a Pandas DataFrame from numpy array 
+import pandas as pd
+a2 = np.array([[1,2,3], [4,6.5,7]])
+df = pd.DataFrame(a2)
 ```
 
 
 ### Creating arrays
+Numpy functions to be used:
 
+   * Placeholder arrays:
+     * ones()
+     * zeros()
+        
+
+   * Range array:
+     * arrange()
+   
+
+   * Random array:
+     * random.randint()
+     * random.random()
+     * random.rand()
+     
+
+   * Pseudo-random array:
+     * random.seed()
+     
 ```python
-# Create a Pandas DataFrame from 
-import pandas as pd
 import numpy as np
 
-a2 = np.array([[1,2,3], [4,6.5,7]])
-df = pd.DataFrame(a2)
+# Creating numpy array:
+sample_array = np.array([1,2,3])
+
+# ones() function will return a new array of given shape and type filled with ones
+ones = np.ones(shape=(2,3), dtype=int)
+ones
+# console >> array([[1, 1, 1], [1, 1, 1]])
+
+# zeroes() function will return a new array of given shape and type filled with zeros
+zeros = np.zeros(shape=(2,3), dtype=float)
+zeros
+# console >> array([[0., 0., 0.], [0., 0., 0.]])
+
+# arrange() function to create array from range like: start-stop-step
+range_array = np.arange(0,10,2)
+range_array
+# console >> array([0, 2, 4, 6, 8])
+
+# random array using random.randint() function to create integers in range from low to high
+random_array = np.random.randint(low=0, high=10, size=(3,5))
+random_array
+# console >> array([[7, 4, 4, 7, 0], [0, 0, 9, 5, 7], [7, 8, 3, 9, 1]])
+
+# random array using random.random() function to create floats in the half-open interval from 0 to 1
+random_array2 = np.random.random((2,3))
+random_array2
+# console >> array([[0.90025663, 0.22956566, 0.94998119], [0.17103584, 0.86062334, 0.20246913]])
+
+# random array using random.rand() function to create random values in the given shape
+random_array3 = np.random.rand(2,3)
+random_array3
+# console >> array([[0.68284128, 0.48876519, 0.79986118], [0.86774647, 0.13287731, 0.5262673 ]])
+
+
 ```
 
 ### Viewing arrays and matrices
