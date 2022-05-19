@@ -18,7 +18,7 @@ import numpy as np
       * Pandas dataframe is used to store a structured dataset. It is more like a spreadsheet than an array
       * NumPy array is just an array of numbers
       
-<img width="1353" alt="numpy-anatomy-of-a-numpy-array" src="https://user-images.githubusercontent.com/74961891/169284767-c43d0c16-f6d2-465a-b1f4-62bd42b7b785.png">
+![corrected](https://user-images.githubusercontent.com/74961891/169285813-a9ada68a-3a51-4e05-ad72-78795149791a.png)
  
 ### Data types and attributes (ndarray)
 
@@ -31,7 +31,7 @@ a1 = np.array([1,2,3])
 # Shape (2,3) - 1 rows, 3 columns - two dimensional array (matrix)
 a2 = np.array([[1,2,3], [4,6.5,7]])
 
-# Shape (3,3,2) - 3 rows, 3 columns, 2 layers - three dimensional array (matrix)
+# Shape (2,3,3) - 2 layers, 3 rows, 3 columns - three dimensional array (matrix)
 a3 = np.array([[[1,2,3], [4,5,6], [7,8,9]], [[10,11,12],[13,14,15],[16,17,18]]])
 
 # Show shape of array:
