@@ -25,6 +25,8 @@ import numpy as np
    * Numpy's main datatype is ndarray (n-dimensional array)
 
 ```python
+import numpy as np
+
 # Shape (1,3) - 1 row, 3 columns - one dimension array (vector)
 a1 = np.array([1,2,3])
 
@@ -36,19 +38,19 @@ a3 = np.array([[[1,2,3], [4,5,6], [7,8,9]], [[10,11,12],[13,14,15],[16,17,18]]])
 
 # Show shape of array:
 a3.shape
->> (2, 3, 3)
+# console >> (2, 3, 3)
 
 # Show number of dimensions of our arrays:
 a1.ndim, a2.ndim, a3.ndim
->> (1, 2, 3)
+# console >> (1, 2, 3)
 
 # Show datatypes of our arrays:
 a1.dtype, a2.dtype, a3.dtype
->> (dtype('int32'), dtype('float64'), dtype('int32'))
+# console >> (dtype('int32'), dtype('float64'), dtype('int32'))
 
 # Show number of elements in arrays:
 a1.size, a2.size, a3.size
->> (3, 6, 18)
+# console >> (3, 6, 18)
 ```
 
 
@@ -57,6 +59,9 @@ a1.size, a2.size, a3.size
 ```python
 # Create a Pandas DataFrame from 
 import pandas as pd
+import numpy as np
+
+a2 = np.array([[1,2,3], [4,6.5,7]])
 df = pd.DataFrame(a2)
 ```
 
