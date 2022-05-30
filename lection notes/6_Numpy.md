@@ -116,11 +116,19 @@ random_array3 = np.random.rand(2,3)
 random_array3
 # console >> array([[0.68284128, 0.48876519, 0.79986118], [0.86774647, 0.13287731, 0.5262673 ]])
 
-
+# Pseudo-random arrays - allows us to create random arrays that are reproducable 
+# line below ensures that our random_array4 will be the same no matter how many times we will run this command :) 
+np.random.seed(seed=0)
+random_array4 = np.random.randint(10, size=(5,3))
+random_array4
 ```
 
 ### Viewing arrays and matrices
+Functions to be used:
 
+ * unique() - to find the unique elements of the array
+ * 
+ * 
 
 ### Manipulating and comparing arrays
 
