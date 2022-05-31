@@ -406,6 +406,64 @@ array([[1. , 4. ],
 a2.T.shape
 # console >> (3, 2)
 ```
+
+#### Dot product
+* Dot product is just another way of finding patterns between two different sets of numbers
+```python
+np.random.seed()
+
+mat1 = np.random.randint(10, size=(5, 3))
+mat2 = np.random.randint(10, size=(5, 3))
+
+
+mat1
+# console:
+array([[0, 1, 0],
+       [1, 4, 7],
+       [9, 4, 9],
+       [2, 6, 2],
+       [5, 5, 4]])
+
+
+mat2
+# console:
+array([[6, 2, 3],
+       [9, 5, 0],
+       [6, 1, 1],
+       [4, 9, 9],
+       [6, 0, 4]])
+
+
+# Element-wise multiplication
+mat1 * mat2
+# console:
+array([[ 0,  2,  0],
+       [ 9, 20,  0],
+       [54,  4,  9],
+       [ 8, 54, 18],
+       [30,  0, 16]])
+
+
+# Dot product multiplication:
+np.dot(mat1, mat2)
+# console >> ValueError: shapes (5,3) and (5,3) not aligned: 3 (dim 1) != 5 (dim 0)
+
+# NOTE: It's not working because shapes (5,3) (5,3) are not aligned - meaning Numbers on the inside must match. 
+# Meaning we need to have shapes like (5,3) and (3,5)
+# NOTE: check http://matrixmultiplication.xyz/
+# Solution: use transpose on matrix to solve it
+
+
+np.dot(mat1,mat2.T)
+# console:
+array([[  2,   5,   1,   9,   0],
+       [ 35,  29,  17, 103,  34],
+       [ 89, 101,  67, 153,  90],
+       [ 30,  48,  20,  80,  20],
+       [ 52,  70,  39, 101,  46]])
+```
+
+
 ### Sorting arrays
 
 

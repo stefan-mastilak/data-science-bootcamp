@@ -273,4 +273,36 @@ plt.show()
 plt.hist(low_var_arr)
 plt.show()
 
-#
+# #### Dot product
+
+# +
+# Dot product is just another way of finding patterns between two different sets of numbers
+
+# +
+np.random.seed()
+
+mat1 = np.random.randint(10, size=(5, 3))
+mat2 = np.random.randint(10, size=(5, 3))
+# -
+
+mat1
+
+mat2
+
+# Element-wise multiplication:
+mat1 * mat2
+
+# Dot product multiplication:
+np.dot(mat1, mat2)
+
+# +
+# NOTE: It's not working because shapes (5,3) (5,3) are not aligned - meaning Numbers on the inside must match. 
+# Meaning we need to have shapes like (5,3) and (3,5)
+
+# NOTE: check http://matrixmultiplication.xyz/
+# Solution: use transpose on matrix to solve it
+# -
+
+np.dot(mat1,mat2.T)
+
+
