@@ -36,21 +36,30 @@ a2 = np.array([[1,2,3], [4,6.5,7]])
 # Shape (2,3,3) - 2 layers, 3 rows, 3 columns - three dimensional array (matrix)
 a3 = np.array([[[1,2,3], [4,5,6], [7,8,9]], [[10,11,12],[13,14,15],[16,17,18]]])
 
+
 # Show shape of array:
 a3.shape
-# console >> (2, 3, 3)
+# console:
+(2, 3, 3)
+
 
 # Show number of dimensions of our arrays:
 a1.ndim, a2.ndim, a3.ndim
-# console >> (1, 2, 3)
+# console:
+(1, 2, 3)
+
 
 # Show datatypes of our arrays:
 a1.dtype, a2.dtype, a3.dtype
-# console >> (dtype('int32'), dtype('float64'), dtype('int32'))
+# console:
+(dtype('int32'), dtype('float64'), dtype('int32'))
+
 
 # Show number of elements in arrays:
 a1.size, a2.size, a3.size
-# console >> (3, 6, 18)
+# console:
+(3, 6, 18)
+
 
 # Create a Pandas DataFrame from numpy array 
 import pandas as pd
@@ -86,35 +95,54 @@ import numpy as np
 # Creating numpy array:
 sample_array = np.array([1,2,3])
 
+
 # ones() function will return a new array of given shape and type filled with ones
 ones = np.ones(shape=(2,3), dtype=int)
 ones
-# console >> array([[1, 1, 1], [1, 1, 1]])
+# console:
+array([[1, 1, 1], 
+       [1, 1, 1]])
+
 
 # zeroes() function will return a new array of given shape and type filled with zeros
 zeros = np.zeros(shape=(2,3), dtype=float)
 zeros
-# console >> array([[0., 0., 0.], [0., 0., 0.]])
+# console:
+array([[0., 0., 0.], 
+       [0., 0., 0.]])
+
 
 # arrange() function to create array from range like: start-stop-step
 range_array = np.arange(0,10,2)
 range_array
-# console >> array([0, 2, 4, 6, 8])
+# console:
+array([0, 2, 4, 6, 8])
+
 
 # random array using random.randint() function to create integers in range from low to high
 random_array = np.random.randint(low=0, high=10, size=(3,5))
 random_array
-# console >> array([[7, 4, 4, 7, 0], [0, 0, 9, 5, 7], [7, 8, 3, 9, 1]])
+# console:
+array([[7, 4, 4, 7, 0], 
+       [0, 0, 9, 5, 7], 
+       [7, 8, 3, 9, 1]])
+
 
 # random array using random.random() function to create floats in the half-open interval from 0 to 1
 random_array2 = np.random.random((2,3))
 random_array2
-# console >> array([[0.90025663, 0.22956566, 0.94998119], [0.17103584, 0.86062334, 0.20246913]])
+# console:
+array([[0.90025663, 0.22956566, 0.94998119], 
+       [0.17103584, 0.86062334, 0.20246913]])
+
 
 # random array using random.rand() function to create random values in the given shape
 random_array3 = np.random.rand(2,3)
 random_array3
-# console >> array([[0.68284128, 0.48876519, 0.79986118], [0.86774647, 0.13287731, 0.5262673 ]])
+# console:
+array([[0.68284128, 0.48876519, 0.79986118], 
+       [0.86774647, 0.13287731, 0.5262673 ]])
+
 
 # Pseudo-random arrays - allows us to create random arrays that are reproducable 
 # line below ensures that our random_array4 will be the same no matter how many times we will run this command :) 
@@ -133,11 +161,17 @@ Functions to be used:
 ```python
 # Access elements by index:
 a3[0]
-# console >> array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+# console:
+array([[1, 2, 3], 
+       [4, 5, 6], 
+       [7, 8, 9]])
+
 
 # Access elements by slicing:
 a3[0][1:]
-# console >> array([[4, 5, 6], [7, 8, 9]])
+# console:
+array([[4, 5, 6], 
+       [7, 8, 9]])
 
 ```
 
@@ -164,20 +198,24 @@ ones
 # console:
 array([1., 1., 1.])
 
+
 # Adding two arrays - elements will be summed 
 a1 + ones
 # console:
 array([2., 3., 4.])
+
 
 # Subtraction of array elements
 a1 - ones
 # console:
 array([0., 1., 2.])
 
+
 # Multiplication of array elements:
 a1 * ones
 # console:
 array([1., 2., 3.])
+
 
 # Floor division (removes decimals by rounding down)
 a2 // a1
@@ -185,20 +223,24 @@ a2 // a1
 array([[1., 1., 1.], 
        [4., 3., 2.]])
 
+
 # Square
 a1 ** 2
 # console:
 array([1, 4, 9])
+
 
 # Modulo
 a1 % 2
 # console:
 array([1, 0, 1], dtype=int32)
 
+
 # Exponential
 np.exp(a1)
 # console:
 array([ 2.71828183,  7.3890561 , 20.08553692])
+
 
 # Logarithm
 np.log(a1)
@@ -230,19 +272,26 @@ array([[1. , 2. , 3. ],
 
 # Sum
 np.sum(a2)
-# console >> 23.5
+# console:
+23.5
+
 
 # Mean
 np.mean(a2)
-# console >> 3.916
+# console:
+3.916
+
 
 # Max
 np.max(a2)
-# console >> 7.0
+# console:
+7.0
+
 
 # Min
 np.min(a2)
-# console >> 1.0
+# console:
+1.0
 ```
 #### Standard deviation and Variance
 
