@@ -425,7 +425,9 @@ a2.T.shape
 ```
 
 #### Dot product
+
 * Dot product is just another way of finding patterns between two different sets of numbers
+
 ```python
 np.random.seed()
 
@@ -480,9 +482,107 @@ array([[  2,   5,   1,   9,   0],
        [ 52,  70,  39, 101,  46]])
 ```
 
+#### Comparison operators
+
+* Basic comparison operator for numpy arrays:
+
+```python
+a1
+# console:
+array([1, 2, 3])
+
+a2
+# console:
+array([[1. , 2. , 3. ],
+       [4. , 6.5, 7. ]])
+
+
+# More than:
+a1 > a2
+# console:
+array([[False, False, False],
+       [False, False, False]])
+
+
+# Less than:
+a1 < a2
+# console:
+array([[False, False, False],
+       [ True,  True,  True]])
+
+
+# More or equal:
+a1 >= a2
+# console:
+array([[ True,  True,  True],
+       [False, False, False]])
+
+
+# Less or equal:
+a1 <= a2
+# console:
+array([[ True,  True,  True],
+       [ True,  True,  True]])
+
+
+# Equal:
+a1 == a2
+# console:
+array([[ True,  True,  True],
+       [False, False, False]])
+
+
+# Unequal:
+a1 != a2
+# console:
+array([[False, False, False],
+       [ True,  True,  True]])
+```
 
 ### Sorting arrays
 
+* np.sort(array) - return sorted copy of an array
+
+```python
+random_array
+# console:
+array([[7, 8, 1, 5, 9],
+       [8, 9, 4, 3, 0],
+       [3, 5, 0, 2, 3]])
+
+
+random_array.shape
+# console:
+(3, 5)
+
+
+# sort method - sort numbers on each axis of array:
+np.sort(random_array)
+# console:
+array([[1, 5, 7, 8, 9],
+       [0, 3, 4, 8, 9],
+       [0, 2, 3, 3, 5]])
+
+
+# argsort method - sorting based on indexes of numbers in array (order from less to highest number):
+np.argsort(random_array)
+# console:
+array([[2, 3, 0, 1, 4],
+       [4, 3, 2, 0, 1],
+       [2, 3, 0, 4, 1]], dtype=int64)
+
+
+# argmin method - returns the indices of the minimum values along an axis
+np.argmin(random_array, axis=0)
+# console:
+array([2, 2, 2, 2, 1], dtype=int64)
+
+
+# arxmax method - returns the indices of the maximum values along an axis
+np.argmax(random_array, axis=0)
+# console:
+array([1, 1, 1, 0, 0], dtype=int64)
+```
 
 ### Practical use cases
 

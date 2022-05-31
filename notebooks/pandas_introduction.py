@@ -89,7 +89,7 @@ random_array2
 random_array3 = np.random.rand(2,3)
 random_array3
 
-# #### Pseudo-random arrays
+# ### Pseudo-random arrays
 # #### random.seed()
 
 # Pseudo-random arrays - allows us to create random arrays that are reproducable 
@@ -109,12 +109,12 @@ np.unique(random_array4)
 
 a3
 
-# #### Indexing
+# ### Indexing
 
 # Access elements by index:
 a3[0]
 
-# #### Slicing
+# ### Slicing
 
 # Access elements by slicing:
 a3[0][1:]
@@ -162,7 +162,7 @@ np.exp(a1)
 # Logarithm
 np.log(a1)
 
-# #### Reshaping
+# ### Reshaping
 
 # +
 # NOTE: Check numpy broadcasting to see how arithmetic operations behave on arrays with different shapes
@@ -186,7 +186,7 @@ a2_reshaped = a2.reshape(2,3,1)
 
 a2_reshaped * a3
 
-# #### Transposing
+# ### Transposing
 
 # +
 # Transpose = switches the axis'
@@ -199,7 +199,7 @@ a2.T
 
 a2.T.shape
 
-# #### Aggregation 
+# ### Aggregation 
 
 # Aggregation = performing the same operation on a number of things
 #
@@ -233,7 +233,7 @@ np.max(a2)
 # Min
 np.min(a2)
 
-# #### Standard deviation and Variance
+# ### Standard deviation and Variance
 
 # Standard deviation = measure of how spread out a group of numbers is from the mean
 np.std(a2)
@@ -273,10 +273,8 @@ plt.show()
 plt.hist(low_var_arr)
 plt.show()
 
-# #### Dot product
-
-# +
-# Dot product is just another way of finding patterns between two different sets of numbers
+# ### Dot product
+# ##### Dot product is just another way of finding patterns between two different sets of numbers
 
 # +
 np.random.seed()
@@ -304,5 +302,91 @@ np.dot(mat1, mat2)
 # -
 
 np.dot(mat1,mat2.T)
+
+# ### Dot product usage example
+
+np.random.seed(0)
+sales_amounts = np.random.randint(20, size=(5,3))
+sales_amounts
+
+# Create weekly sales DataFrame
+import pandas as pd
+weekly_sales = pd.DataFrame(sales_amounts, index=["Mon", "Tue", "Wed", "Thu", "Fri"], 
+                            columns=["Almond butter", "Peanut butter", "Cashew butter"])
+weekly_sales
+
+# Create prices array:
+prices = np.array([10,8,12])
+prices
+
+# Create butter_prices DataFrame:
+butter_prices = pd.DataFrame(prices.reshape(1,3), index=["Price"], columns=["Almond butter", "Peanut butter", "Cashew butter"])
+butter_prices
+
+total_sales = prices.dot(sales_amounts)
+
+# Shapes aren't aligned - transpose needed
+total_sales = prices.dot(sales_amounts.T)
+total_sales
+
+# Create daily sales:
+butter_prices.shape, weekly_sales.shape
+
+# Create daily sales:
+daily_sales = butter_prices.dot(weekly_sales.T)
+daily_sales
+
+# Put that column to the table weekly sales:
+weekly_sales["Total ($)"] = daily_sales.T
+weekly_sales
+
+# ### Comparison operators
+# ##### Basic comparison operator for numpy arrays
+
+a1
+
+a2
+
+# More than:
+a1 > a2
+
+# Less than:
+a1 < a2
+
+# More or equal:
+a1 >= a2
+
+# Less or equal:
+a1 <= a2
+
+# Equality:
+a1 == a2
+
+# Unequality
+a1 != a2
+
+# # Sorting arrays
+
+random_array
+
+random_array.shape
+
+# Sort numbers on each axis of array:
+np.sort(random_array)
+
+# Sorting based on indexes of numbers in array:
+np.argsort(random_array)
+
+# argmin - Returns the indices of the minimum values along an axis
+np.argmin(random_array, axis=0)
+
+# arxmax - Returns the indices of the maximum values along an axis
+np.argmax(random_array, axis=0)
+
+# ## Example - Turn Images into Numpy arrays
+
+# + language="html"
+# <img src="images/numpy-panda.png" />
+# -
 
 
