@@ -152,45 +152,58 @@ a3[0][1:]
 
 ```python
 a1
-# console >> array([1, 2, 3])
+# console:
+array([1, 2, 3])
 
 a2
-# console >> array([[1. , 2. , 3. ], [4. , 6.5, 7. ]])
+# console:
+array([[1. , 2. , 3. ], 
+       [4. , 6.5, 7. ]])
 
 ones
-# console >> array([1., 1., 1.])
+# console:
+array([1., 1., 1.])
 
 # Adding two arrays - elements will be summed 
 a1 + ones
-# console >> array([2., 3., 4.])
+# console:
+array([2., 3., 4.])
 
 # Subtraction of array elements
 a1 - ones
-# console >> array([0., 1., 2.])
+# console:
+array([0., 1., 2.])
 
 # Multiplication of array elements:
 a1 * ones
-# console >> array([1., 2., 3.])
+# console:
+array([1., 2., 3.])
 
 # Floor division (removes decimals by rounding down)
 a2 // a1
-# console >> array([[1., 1., 1.], [4., 3., 2.]])
+# console:
+array([[1., 1., 1.], 
+       [4., 3., 2.]])
 
 # Square
 a1 ** 2
-# console >> array([1, 4, 9])
+# console:
+array([1, 4, 9])
 
 # Modulo
 a1 % 2
-# console >> array([1, 0, 1], dtype=int32)
+# console:
+array([1, 0, 1], dtype=int32)
 
 # Exponential
 np.exp(a1)
-# console >> array([ 2.71828183,  7.3890561 , 20.08553692])
+# console:
+array([ 2.71828183,  7.3890561 , 20.08553692])
 
 # Logarithm
 np.log(a1)
-# console >> array([0. , 0.69314718, 1.09861229])
+# console:
+array([0. , 0.69314718, 1.09861229])
 ```
 #### Aggregation
 * Aggregation = performing the same operation on a number of things
@@ -211,7 +224,9 @@ massive_arr.size
 # Note: As you can see numpy is more than 500 times faster because Numpy is optimized to perform numerical calculations
 
 a2
-# console >> array([[1. , 2. , 3. ], [4. , 6.5, 7. ]])
+# console:
+array([[1. , 2. , 3. ], 
+       [4. , 6.5, 7. ]])
 
 # Sum
 np.sum(a2)
