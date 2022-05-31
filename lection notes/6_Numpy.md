@@ -159,6 +159,23 @@ Functions to be used:
  * slicing - access by list slicing
 
 ```python
+a3
+# console:
+array([[[ 1,  2,  3],
+        [ 4,  5,  6],
+        [ 7,  8,  9]],
+
+       [[10, 11, 12],
+        [13, 14, 15],
+        [16, 17, 18]]])
+
+
+# Get unique elements of array:
+np.unique(a3)
+# console:
+array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18])
+
+
 # Access elements by index:
 a3[0]
 # console:
