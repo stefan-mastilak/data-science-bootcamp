@@ -14,16 +14,43 @@
 
 # # Indtoruction to Matplotlib
 
+# ### Plot example workflow
+
+# +
+# Imports:
+
 # %matplotlib inline
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
+# +
+# Prepare some data:
+
 x = [1,2,3,4]
 y = [11,22,3,44]
+
+# Simple plot:
 plt.plot(x, y)
 
-fig, ax = plt.subplots()
+# +
+# Prepare plot (recommended way):
+
+fig, ax = plt.subplots(figsize=(6,6))
 ax.plot(x,y)
+# -
+
+type(fig), type(ax)
+
+# +
+# Customize plot:
+
+ax.set(title="Simple plot", xlabel="X", ylabel="Y")
+
+# +
+# Save and show:
+
+fig.savefig("images/simple_plot.png")
+# -
 
 

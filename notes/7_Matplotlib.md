@@ -16,22 +16,29 @@ Machine learning & Data science Bootcamp
     * Simple to use interface (once you get the foundations)
 
 ```python
-# imports:
+# Imports:
 %matplotlib inline
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 ```
 ```python
+# Prepare data:
 x = [1,2,3,4]
 y = [11,22,33,44]
 
-# plot example:
+# Simple plot example:
 plt.plot(x, y)
 
-# plot example:
-fig, ax = plt.subplots()
+# Setup plot (recommended way):
+fig, ax = plt.subplots(figsize=(10,10))
 ax.plot(x,y)
+
+# Customize plot:
+ax.set(title="Simple plot", xlabel="X", ylabel="Y")
+
+# Save and show:
+fig.savefig("images/simple_plot.png")
 ```
 
 ## Anatomy of plot
