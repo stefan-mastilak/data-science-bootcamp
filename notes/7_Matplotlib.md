@@ -34,5 +34,8 @@ fig, ax = plt.subplots()
 ax.plot(x,y)
 ```
 
-## Anatomy of a matplotlib plot
+## Anatomy of plot
 
+<img width="998" alt="matplotlib-anatomy-of-a-plot" src="https://user-images.githubusercontent.com/74961891/174809783-da778aa4-d7c9-447b-9804-d33511506b12.png">
+
+<img width="997" alt="matplotlib-anatomy-of-a-plot-with-code" src="https://user-images.githubusercontent.com/74961891/174809910-8d394f58-042a-4782-8eb1-fed97972b3e6.png">
