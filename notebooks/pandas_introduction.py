@@ -389,4 +389,13 @@ np.argmax(random_array, axis=0)
 # <img src="images/numpy-panda.png" />
 # -
 
+from matplotlib.image import imread
+
+# +
+# turning image into the numbers - ndarray:
+panda = imread("images/numpy-panda.png")
+
+print(panda[:3])
+# -
+
 
