@@ -12,4 +12,18 @@
 #     name: python3
 # ---
 
+# # Indtoruction to Matplotlib
+
+# %matplotlib inline
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+x = [1,2,3,4]
+y = [11,22,3,44]
+plt.plot(x, y)
+
+fig, ax = plt.subplots()
+ax.plot(x,y)
+
 
