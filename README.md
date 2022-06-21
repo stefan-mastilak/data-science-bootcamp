@@ -31,3 +31,8 @@ Course source: https://visma.udemy.com/course/complete-machine-learning-and-data
     * http://jalammar.github.io/visual-numpy/
     * https://numpy.org/doc/1.17/user/quickstart.html
     
+
+* Mathematics learning materials:
+    * mathematics: https://www.khanacademy.org/math
+    * statistic: https://www.youtube.com/watch?v=zouPoc49xbk&list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr
+    
