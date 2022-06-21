@@ -13,6 +13,12 @@ Course source: https://visma.udemy.com/course/complete-machine-learning-and-data
 * Course repository: https://github.com/mrdbourke/zero-to-mastery-ml
 * Course notes: https://github.com/chesterheng/machinelearning-datascience
 
+
+* Numpy:
+    * https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html
+    * http://jalammar.github.io/visual-numpy/
+    * https://numpy.org/doc/1.17/user/quickstart.html
+
 ### Prerequisites:
 
 * Python:
