@@ -12,390 +12,228 @@
 #     name: python3
 # ---
 
-# Import numpy
-import numpy as np
-
-# ## Datatypes and attributes
-#
-
-# +
-# Numpy's main datatype is ndarray - (n-dimensional array)
-
-# Shape (1,3) - 1 row, 3 columns - one dimension array (vector)
-a1 = np.array([1,2,3])
-
-# Shape (2,3) - 1 rows, 3 columns - two dimensional array (matrix)
-a2 = np.array([[1,2,3], [4,6.5,7]])
-
-# Shape (3,3,2) - 3 rows, 3 columns, 2 layers - three dimensional array (matrix)
-a3 = np.array([[[1,2,3], [4,5,6], [7,8,9]], [[10,11,12],[13,14,15],[16,17,18]]])
-# -
-
-# Show shape of array:
-a3.shape
-
-# Show number of dimensions of our arrays:
-a1.ndim, a2.ndim, a3.ndim
-
-# Show datatypes of our arrays:
-a1.dtype, a2.dtype, a3.dtype
-
-# Show number of elements in arrays:
-a1.size, a2.size, a3.size
-
-# ## Creating arrays
-
-# Create a Pandas DataFrame from numpy array
 import pandas as pd
-df = pd.DataFrame(a2)
 
-# Creating numpy array:
-sample_array = np.array([1,2,3])
-sample_array
-
-# #### ones()
-
-# ones() function will return a new array of given shape and type filled with ones
-ones = np.ones(shape=(2,3), dtype=int)
-ones
-
-# #### zeroes()
-
-# zeroes() function will return a new array of given shape and type filled with zeros
-zeros = np.zeros(shape=(2,3), dtype=float)
-zeros
-
-# #### arrange()
-
-# arrange() function to create array from range like start-stop-step
-range_array = np.arange(0,10,2)
-range_array
-
-# #### random.randint()
-
-# random array using random.randint() function to create integers in range from low to high
-random_array = np.random.randint(low=0, high=10, size=(3,5))
-random_array
-
-# #### random.random()
-
-# random array using random.random() function to create floats in the half-open interval from 0 to 1
-random_array2 = np.random.random((2,3))
-random_array2
-
-# #### random.rand()
-
-# random array using random.rand() function to create random values in the given shape
-random_array3 = np.random.rand(2,3)
-random_array3
-
-# ### Pseudo-random arrays
-# #### random.seed()
-
-# Pseudo-random arrays - allows us to create random arrays that are reproducable 
-# line below ensures that our random_array4 will be the same no matter how many times we will run this command :) 
-np.random.seed(seed=0)
-random_array4 = np.random.randint(10, size=(5,3))
-random_array4
-
-np.random.seed(seed=7)
-random_array5 = np.random.random((5,3))
-random_array5
-
-# ## Viewing arrays and matrices
-
-# Get unique elements of array:
-np.unique(random_array4)
-
-a3
-
-# ### Indexing
-
-# Access elements by index:
-a3[0]
-
-# ### Slicing
-
-# Access elements by slicing:
-a3[0][1:]
-
-a4 = np.random.randint(10, size=(2,3,4,5))
-a4
-
-a4.shape, a4.ndim
-
-# Get the first 4 elements of the inner most array:
-a4[:, :, :, :4]
-
-# ## Manipulating and comparing arrays 
-
-# ### Arithmetic operations
-
-a1
-
-a2
-
-ones = np.ones(3)
-ones
-
-# Adding two arrays - elements will be summed 
-a1 + ones
-
-# Subtraction of array elements
-a1 - ones
-
-# Multiplication of array elements:
-a1 * ones
-
-# Floor division (removes decimals by rounding down)
-a2 // a1
-
-# Square
-a1 ** 2
-
-# Modulo
-a1 % 2
-
-# Exponential
-np.exp(a1)
-
-# Logarithm
-np.log(a1)
-
-# ### Reshaping
+# ## Two main datatypes in Pandas:
+# 1) Series - one dimensional
+# 2) DataFrame - two dimensional
 
 # +
-# NOTE: Check numpy broadcasting to see how arithmetic operations behave on arrays with different shapes
-# https://numpy.org/doc/stable/user/basics.broadcasting.html
+# series - one dimensional
 # -
 
-a2
+series = pd.Series(["BMW", "Toyota", "Honda"])
 
-a3
-
-# How can you reshape a2 to be compatible with a3?
-a2 * a3
-
-a2.shape, a3.shape
-
-a2.reshape(2,3,1).shape
-
-a3.shape
-
-a2_reshaped = a2.reshape(2,3,1)
-
-a2_reshaped * a3
-
-# ### Transposing
+colours = pd.Series(["Blue", "Red", "White"])
 
 # +
-# Transpose = switches the axis'
+# dataframe - two dimensional
 # -
 
-a2
+car_data = pd.DataFrame({"Car make": series, "Colour": colours})
 
-# Transpose array a2:
-a2.T
+car_data
 
-a2.T.shape
+# +
+# import data - instead of creating data by yourself you will probably want to import data from datasource 
+# -
 
-# ### Aggregation 
+car_sales = pd.read_csv("data/car-sales.csv")
 
-# Aggregation = performing the same operation on a number of things
+car_sales
+
+# +
+# exporting a dataframe - to csv, excel, html, json, etc.
+# -
+
+car_sales.to_csv("data/exported-car-sales.csv", index=False) # index=False serves well when there is unnamed column in your data
+
+exported_car_sales = pd.read_csv("data/exported-car-sales.csv")
+
+# ## Reading a data from URLs
+# Another great feature of pandas is being able to import .csv files directly from a URL.
+# For example, for the heart-disease.csv file, using the read_csv() function you can directly import it using the URL from the course GitHub repo:
+
+heart_disease = pd.read_csv("https://raw.githubusercontent.com/mrdbourke/zero-to-mastery-ml/master/data/heart-disease.csv")
+
+# ## Describe data with Pandas
+
+# attribute dtypes - shows data types of the dataframe objects
+car_sales.dtypes
+
+# attribute columns - shows dataframe columns
+car_sales.columns
+
+# attribute index - shows range of indexes in your dataframe
+car_sales.index
+
+# function describe - gives us some statistic info about our data (it works only on numeric columns)
+car_sales.describe()
+
+# function info - shows information about the dataframe 
+car_sales.info()
+
+# fubnction mean - shows average of numerical columns
+car_sales.mean()
+
+# function sum - shows sum of a columns values 
+car_sales.sum()
+# it's better to call it on the single column
+car_sales["Doors"].sum()
+
+# get length of dataframe
+len(car_sales)
+
+# dataframe slicing:
+car_sales[0:3]
+
+# ## Viewing and selecting data with Pandas
+
+# show first rows of your dataframe
+car_sales.head(5) # 5 by default if no value passed in
+
+# shows bottom rows of your dataframe
+car_sales.tail() # 5 by default in no value passed in 
+
+# .loc and .iloc
+car_sales.loc[3]  # loc stands for location - it shows what is on the index 3
+
+car_sales.iloc[3] # iloc refers to position, not index
+
+car_sales.loc[:3] # shows all the items up to item with index 3 (including)
+
+car_sales["Make"]  # shows 'Make' column
+
+car_sales.Make # shows 'Make' column - second way by accessing attribute
+
+car_sales[car_sales["Make"] == "Toyota"]  # filter on data where Make equals 'Toyota'
+
+car_sales[car_sales["Odometer (KM)"] > 80000] # filter on data where Odometer has more than 80000 km
+
+# ## Comparing data with Pandas
+
+# crosstab - to compare two columns 
+pd.crosstab(car_sales["Make"], car_sales["Doors"])
+
+# group by - to compare more than two columns
+car_sales.groupby(["Make"]).mean()
+
+# ## Plotting data with Pandas
+# Plotting depends on the matplotlib. If it doesn't work try to use those two imports:
 #
-# NOTE: Use python's methods (`sum()`) on Python datatypes
+# # %matplotlib inline
 #
-# NOTE: Use Numpy's methods (`np.sum()`) on Numpy arrays
+# import matplotlib.pyplot as plt
 
-# Create massive numpy array:
-massive_arr = np.random.random(100000)
-massive_arr.size
+# plot works only on the numeric data 
+car_sales["Odometer (KM)"].plot()
 
-# Compare Python's sum and Numpy's sum methods performance:
-# %timeit sum(massive_arr)
-# %timeit np.sum(massive_arr)
+# histogram plot
+car_sales["Odometer (KM)"].hist()
 
-# +
-# As you can see numpy is more than 500 times faster. It's because Numpy is optimized to perform numerical calculations
-# -
+# to plot price, we need to convert it into the numeric value:
+car_sales["Price"] = car_sales["Price"].str.replace("[\$\,\.]", "").astype(int)
 
-a2
+car_sales["Price"].plot()
 
-# Sum
-np.sum(a2)
+# ## Manipulating data with Pandas
 
-# Mean
-np.mean(a2)
-
-# Max
-np.max(a2)
-
-# Min
-np.min(a2)
-
-# ### Standard deviation and Variance
-
-# Standard deviation = measure of how spread out a group of numbers is from the mean
-np.std(a2)
-
-# Variance = measure of the average degree to which each number is different to the mean
-# Higher variance = wider ange of numbers
-# Lower variance = lower range of numbers
-np.var(a2)
-
-# Standard deviation = squareroot of variance:
-np.sqrt(np.var(a2))
-
-# Demo of std and var
-high_var_arr = np.array([1, 100, 200, 4000, 5000])
-low_var_arr = np.array([2, 4, 6, 8, 10])
-
-np.var(high_var_arr)
-
-np.var(low_var_arr)
-
-np.std(high_var_arr)
-
-np.std(low_var_arr)
-
-np.mean(high_var_arr)
-
-np.mean(low_var_arr)
+# str.lower - method for lowering letters
+car_sales["Make"].str.lower()
 
 # +
-# %matplotlib inline
-import matplotlib.pyplot as plt
+# reasigning a values will retain the changes we made 
 
-plt.hist(high_var_arr)
-plt.show()
+car_sales["Make"] = car_sales["Make"].str.lower()
+car_sales
 # -
 
-plt.hist(low_var_arr)
-plt.show()
+# ## Missing data 
 
-# ### Dot product
-# ##### Dot product is just another way of finding patterns between two different sets of numbers
+# missing data - problem that usually occurs in real project
+car_sales_missing = pd.read_csv("data/car-sales-missing-data.csv")
+car_sales_missing
 
 # +
-np.random.seed()
+# in order to fill missing values - use fillna method where you can use mean value calculated from the existing values we have 
 
-mat1 = np.random.randint(10, size=(5, 3))
-mat2 = np.random.randint(10, size=(5, 3))
+car_sales_missing["Odometer"].fillna(car_sales_missing["Odometer"].mean(), inplace=True)  
+
+# inplace=True - will fill up the changes into dataframe, not need to reasign in this case
 # -
 
-mat1
+car_sales_missing
 
-mat2
+# function dropna - to drop all rows that have some unfilled values within  
+car_sales_missing_dropped = car_sales_missing.dropna()
 
-# Element-wise multiplication:
-mat1 * mat2
+car_sales_missing_dropped
 
-# Dot product multiplication:
-np.dot(mat1, mat2)
+car_sales_missing_dropped.to_csv("data/car-sales-missing-dropped.csv")
+
+# ## Creating columns in Pandas
 
 # +
-# NOTE: It's not working because shapes (5,3) (5,3) are not aligned - meaning Numbers on the inside must match. 
-# Meaning we need to have shapes like (5,3) and (3,5)
+### Columns from series
 
-# NOTE: check http://matrixmultiplication.xyz/
-# Solution: use transpose on matrix to solve it
-# -
-
-np.dot(mat1,mat2.T)
-
-# ### Dot product usage example
-
-np.random.seed(0)
-sales_amounts = np.random.randint(20, size=(5,3))
-sales_amounts
-
-# Create weekly sales DataFrame
-import pandas as pd
-weekly_sales = pd.DataFrame(sales_amounts, index=["Mon", "Tue", "Wed", "Thu", "Fri"], 
-                            columns=["Almond butter", "Peanut butter", "Cashew butter"])
-weekly_sales
-
-# Create prices array:
-prices = np.array([10,8,12])
-prices
-
-# Create butter_prices DataFrame:
-butter_prices = pd.DataFrame(prices.reshape(1,3), index=["Price"], columns=["Almond butter", "Peanut butter", "Cashew butter"])
-butter_prices
-
-total_sales = prices.dot(sales_amounts)
-
-# Shapes aren't aligned - transpose needed
-total_sales = prices.dot(sales_amounts.T)
-total_sales
-
-# Create daily sales:
-butter_prices.shape, weekly_sales.shape
-
-# Create daily sales:
-daily_sales = butter_prices.dot(weekly_sales.T)
-daily_sales
-
-# Put that column to the table weekly sales:
-weekly_sales["Total ($)"] = daily_sales.T
-weekly_sales
-
-# ### Comparison operators
-# ##### Basic comparison operator for numpy arrays
-
-a1
-
-a2
-
-# More than:
-a1 > a2
-
-# Less than:
-a1 < a2
-
-# More or equal:
-a1 >= a2
-
-# Less or equal:
-a1 <= a2
-
-# Equality:
-a1 == a2
-
-# Unequality
-a1 != a2
-
-# # Sorting arrays
-
-random_array
-
-random_array.shape
-
-# Sort numbers on each axis of array:
-np.sort(random_array)
-
-# Sorting based on indexes of numbers in array:
-np.argsort(random_array)
-
-# argmin - Returns the indices of the minimum values along an axis
-np.argmin(random_array, axis=0)
-
-# arxmax - Returns the indices of the maximum values along an axis
-np.argmax(random_array, axis=0)
-
-# ## Example - Turn Images into Numpy arrays
-
-# + language="html"
-# <img src="images/numpy-panda.png" />
-# -
-
-from matplotlib.image import imread
+seats_col = pd.Series([5,5,5,5,5])
+car_sales["Seats"].fillna(5, inplace=True)
+car_sales
 
 # +
-# turning image into the numbers - ndarray:
-panda = imread("images/numpy-panda.png")
+### Columns from python list - list length must be the same as length of df
 
-print(panda[:3])
+fuel_economy = [7.5, 9.2, 5.0, 9.6, 8.7, 7.6, 4.0, 5.5, 9.6, 7.2]
+car_sales["Fuel per 100km"] = fuel_economy
+car_sales
+
+# +
+### Column created from another column
+
+car_sales["Total fuel used"] = car_sales["Odometer (KM)"]/100 * car_sales["Fuel per 100km"]
+car_sales
+
+# +
+### Create column from a single value
+
+car_sales["4 wheels"] = True
+car_sales
+# -
+
+# ## Deleting columns in Pandas
+
+car_sales.drop("4 wheels", axis=1, inplace=True)  # axis=1 means column, axis=0 means row
+car_sales
+
+# ## Randomizing data order
+
+car_sales
+
+# +
+# Shuffling data - order of the rows will be shuffled, not their values 
+
+car_sales_shuffled = car_sales.sample(frac=1)  # frac defines fraction of the data (1 means entire dataframe)
+car_sales_shuffled
+
+# +
+# to work with only 20% of data use frac=0.2
+
+car_sales_shuffled.sample(frac=0.2)
+
+# +
+# to restore from shuffled order use function reset_index()
+
+car_sales_shuffled.reset_index(drop=True, inplace=True)
+car_sales_shuffled
+# -
+
+# ## Using lambda to apply to a column
+
+# +
+# To recalculate Odometer from kilometers to miles we will use apply function:
+
+car_sales["Odometer (KM)"] = car_sales["Odometer (KM)"].apply(lambda x: x/1.6)
+car_sales
 # -
 
 

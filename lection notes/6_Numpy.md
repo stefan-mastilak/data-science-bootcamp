@@ -583,6 +583,3 @@ np.argmax(random_array, axis=0)
 # console:
 array([1, 1, 1, 0, 0], dtype=int64)
 ```
-
-### Practical use cases
-
