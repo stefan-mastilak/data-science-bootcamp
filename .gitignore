@@ -1,5 +1,6 @@
 .idea
 .pyc
+.ipynb_checkpoints
 **.pickle
 **.json
 **.log
