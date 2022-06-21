@@ -3,22 +3,6 @@ Machine Learning and Data Science Bootcamp training from Udemy course by Andrei 
 
 Course source: https://visma.udemy.com/course/complete-machine-learning-and-data-science-zero-to-mastery
 
-### Online tools
-
-* ML playground: https://teachablemachine.withgoogle.com/train
-* Teachable machine: https://teachablemachine.withgoogle.com/train
-
-### Links
-
-* Course repository: https://github.com/mrdbourke/zero-to-mastery-ml
-* Course notes: https://github.com/chesterheng/machinelearning-datascience
-
-
-* Numpy:
-    * https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html
-    * http://jalammar.github.io/visual-numpy/
-    * https://numpy.org/doc/1.17/user/quickstart.html
-
 ### Prerequisites:
 
 * Python:
@@ -30,3 +14,20 @@ Course source: https://visma.udemy.com/course/complete-machine-learning-and-data
     
 * Data analysis packages - numpy, matplotlib, pandas
 * Machine learning packages - tensorflow, pytorch, scikit-learn, xgboost, catboost
+
+### Online tools
+
+* ML playground: https://teachablemachine.withgoogle.com/train
+* Teachable machine: https://teachablemachine.withgoogle.com/train
+
+### Links
+
+* Course repository: https://github.com/mrdbourke/zero-to-mastery-ml
+* Course notes: https://github.com/chesterheng/machinelearning-datascience
+
+
+* Numpy learning materials:
+    * https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html
+    * http://jalammar.github.io/visual-numpy/
+    * https://numpy.org/doc/1.17/user/quickstart.html
+    
