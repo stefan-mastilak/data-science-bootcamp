@@ -324,6 +324,8 @@ fig.suptitle(t="Heart disease analysis",
              fontweight='bold')
 ```
 
+![my_plot](https://user-images.githubusercontent.com/74961891/175033657-8919396f-2e06-4f06-9484-71bd4ac434cf.png)
+
 ### Saving and sharing the plots
 
 ```python
