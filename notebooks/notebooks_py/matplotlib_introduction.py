@@ -166,7 +166,9 @@ df
 df.plot.bar()
 
 # Bar plot from car_sales dataframe
-car_sales.plot(x="Make", y="Odometer (KM)", kind='bar')
+car_sales.plot(x="Make", 
+               y="Odometer (KM)", 
+               kind='bar')
 
 # Histogram plot from car_sales dataframe
 car_sales["Odometer (KM)"].plot.hist()
@@ -182,4 +184,197 @@ heart_disease["age"].plot.hist(bins=20)
 
 heart_disease.plot.hist(figsize=(10,20), subplots=True)
 
+# ### Which plot to use? Pyplot vs matplotlib Object Oriented methods
+#
+# * When plotting something quickly - use pyplot methods
+# * When plotting something advanced - use matplotlib OO methods
 
+heart_disease.head()
+
+# get only over 50 records
+over_50 = heart_disease[heart_disease["age"] > 50]
+
+# +
+# Pyplot method
+
+over_50.plot(kind="scatter", x='age', y='chol', c="target")
+
+# +
+# Matplotlib OO method mixed with pyplot
+
+fig, ax = plt.subplots(figsize=(10,6))
+over_50.plot(kind="scatter", x='age', y='chol', c="target", ax=ax)
+# ax.set_xlim([45,100])  # set limit for x axis
+
+# +
+# OO method from scratch
+
+fig, ax = plt.subplots(figsize=(10,6))
+
+# plot the data:
+scatter = ax.scatter(x=over_50["age"], 
+                     y=over_50["chol"], 
+                     c=over_50['target'])
+
+# customize the plot:
+ax.set(title="Heart disease and cholesterol levels",
+      xlabel="Age",
+      ylabel="Cholesterol")
+
+# add a legend
+ax.legend(*scatter.legend_elements(), 
+          title="Target")
+
+# add a horizontal line to show mean value of cholesterol:
+ax.axhline(over_50["chol"].mean(), 
+           linestyle='--')
+
+# +
+# Subplot of cholesterol, age, and thalach
+
+fig, (ax0, ax1) = plt.subplots(figsize=(10,10), 
+                               nrows=2, 
+                               ncols=1)
+
+# add data to axis 0:
+scatter0 = ax0.scatter(x=over_50['age'], 
+                       y=over_50['chol'], 
+                       c=over_50['target'])
+
+# customize axis 0:
+ax0.set(title="heart Disease and Colesterol levels", 
+        xlabel='Age', 
+        ylabel='Cholesterol')
+
+# add legend to axis 0:
+ax0.legend(*scatter0.legend_elements(), 
+           title="Target")
+
+# add a meanline to axis 0;
+ax0.axhline(y=over_50['chol'].mean(), 
+            linestyle='--')
+
+# add data to axis 1:
+scatter1 = ax1.scatter(x=over_50['age'], 
+                       y=over_50['thalach'], 
+                       c=over_50['target'])
+
+# customize axis 1:
+ax1.set(title='Hear Disease and Max hearth rate', 
+        xlabel='Age', 
+        ylabel='Thalach')
+
+# add legend to axis 1:
+ax1.legend(*scatter1.legend_elements(), 
+           title="Target")
+
+# add a meanline to axis 1;
+ax1.axhline(y=over_50['thalach'].mean(), 
+            linestyle='--')
+
+# add title to the figure:
+fig.suptitle(t="Heart disease analysis", 
+             fontsize=16, 
+             fontweight='bold')
+# -
+
+# #### Styling the plot
+
+# See the different styles available:
+plt.style.available
+
+# plot car_sales odometer 
+car_sales['Odometer (KM)'].plot()
+
+# update style to seaborn-whitegrid
+plt.style.use("seaborn-whitegrid")
+
+# plot car_sales odometer 
+car_sales['Odometer (KM)'].plot()
+
+# +
+# How to change style within oo matplotlib methods?
+plt.style.use("seaborn-whitegrid")
+
+fig, ax = plt.subplots(figsize=(10,6))
+
+# plot the data:
+scatter = ax.scatter(x=over_50["age"], 
+                     y=over_50["chol"], 
+                     c=over_50['target'],
+                     cmap='winter')  # change the color schema 
+
+# customize the plot:
+ax.set(title="Heart disease and cholesterol levels",
+      xlabel="Age",
+      ylabel="Cholesterol")
+
+# add a legend
+ax.legend(*scatter.legend_elements(), title="Target")
+
+# add a horizontal line to show mean value of cholesterol:
+ax.axhline(over_50["chol"].mean(), linestyle='--')
+# -
+
+# #### Customizing y and x axis limitations
+
+# +
+# Subplot of cholesterol, age, and thalach
+
+fig, (ax0, ax1) = plt.subplots(figsize=(10,10), nrows=2, ncols=1)
+
+# add data to axis 0:
+scatter0 = ax0.scatter(x=over_50['age'], 
+                       y=over_50['chol'], 
+                       c=over_50['target'],
+                       cmap='winter')
+
+# customize axis 0:
+ax0.set(title="heart Disease and Colesterol levels", 
+        xlabel='Age', 
+        ylabel='Cholesterol')
+
+# set limit for x:
+ax0.set_xlim([50, 80])
+
+# add legend to axis 0:
+ax0.legend(*scatter0.legend_elements(), 
+           title="Target")
+
+# add a meanline to axis 0;
+ax0.axhline(y=over_50['chol'].mean(), 
+            linestyle='--')
+
+# add data to axis 1:
+scatter1 = ax1.scatter(x=over_50['age'], 
+                       y=over_50['thalach'], 
+                       c=over_50['target'],
+                       cmap='winter')
+
+# customize axis 1:
+ax1.set(title='Hear Disease and Max hearth rate', 
+        xlabel='Age', 
+        ylabel='Thalach')
+
+# set limit for x and y axis:
+ax1.set_xlim([50, 80])
+ax1.set_ylim([50, 200])
+
+# add legend to axis 1:
+ax1.legend(*scatter1.legend_elements(), 
+           title="Target")
+
+# add a meanline to axis 1;
+ax1.axhline(y=over_50['thalach'].mean(), 
+            linestyle='--')
+
+# add title to the figure:
+fig.suptitle(t="Heart disease analysis", 
+             fontsize=16, 
+             fontweight='bold')
+# -
+
+# #### Saving and sharing the plots
+
+# to export your figure use:
+fig.savefig("images/my_plot")
