@@ -30,7 +30,11 @@ Course source: https://visma.udemy.com/course/complete-machine-learning-and-data
     * https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html
     * http://jalammar.github.io/visual-numpy/
     * https://numpy.org/doc/1.17/user/quickstart.html
-    
+
+
+* Matplotlib materials:
+    * https://matplotlib.org/3.1.1/tutorials/index.html
+
 
 * Mathematics learning materials:
     * mathematics: https://www.khanacademy.org/math
