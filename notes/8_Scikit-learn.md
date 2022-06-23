@@ -15,5 +15,5 @@ Machine learning & Data science Bootcamp
 
 ### Scikit-learn workflow:
 
-![sklearn-workflow-title](https://user-images.githubusercontent.com/74961891/175291079-f582ef0a-a556-4014-86c4-43f60ae3f884.png)
+![sck](https://user-images.githubusercontent.com/74961891/175296432-317e85fc-599c-4776-ae41-006792952da7.png)
 
