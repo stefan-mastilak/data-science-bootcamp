@@ -182,13 +182,16 @@ ax4.hist(np.random.randn(1000))
 # First we'll need to import pandas and create a DataFrame work with.
 
 # Import pandas as pd
-
+import pandas as pd
 
 # Import the '../data/car-sales.csv' into a DataFame called car_sales and view
+car_sales = pd.read_csv('data/car-sales.csv')
+car_sales
 
-
+# +
 # Try to plot the 'Price' column using the plot() function
-
+# car_sales["Price"].plot()
+# -
 
 # Why doesn't it work?
 #
@@ -199,72 +202,73 @@ ax4.hist(np.random.randn(1000))
 # Hint: To add a column up cumulatively, look up the cumsum() function. And to create a column of dates, look up the date_range() function.
 
 # Remove the symbols, the final two numbers from the 'Price' column and convert it to numbers
+car_sales["Price"] = car_sales["Price"].str.replace("[\$\,\.]", "")
+car_sales["Price"] = car_sales["Price"].str[:-2]
+car_sales
 
-
-# +
 # Add a column called 'Total Sales' to car_sales which cumulatively adds the 'Price' column
-
+car_sales['Total Sales'] = car_sales['Price'].astype(int).cumsum()
+car_sales
 
 # Add a column called 'Sale Date' which lists a series of successive dates starting from today (your today)
-
+car_sales['Sale Date'] = pd.date_range('1/1/2022',periods=len(car_sales))
 # View the car_sales DataFrame
-
-# -
+car_sales
 
 # Now we've got a numeric column (`Total Sales`) and a dates column (`Sale Date`), let's visualize them.
 
 # Use the plot() function to plot the 'Sale Date' column versus the 'Total Sales' column
-
+car_sales.plot(x='Sale Date', y='Total Sales')
 
 # +
 # Convert the 'Price' column to the integers
-
+car_sales['Price'] = car_sales['Price'].astype(int) 
 
 # Create a scatter plot of the 'Odometer (KM)' and 'Price' column using the plot() function
-
+car_sales.plot.scatter(x='Odometer (KM)', y='Price')
 
 # +
 # Create a NumPy array of random numbers of size (10, 4) and save it to X
-
+x = np.random.rand(10,4)
 
 # Turn the NumPy array X into a DataFrame with columns called ['a', 'b', 'c', 'd']
-
+df = pd.DataFrame(x, columns=['a', 'b', 'c', 'd'])
 
 # Create a bar graph of the DataFrame
-
+df.plot.bar()
 # -
 
 # Create a bar graph of the 'Make' and 'Odometer (KM)' columns in the car_sales DataFrame
-
+car_sales.plot.bar(x='Make', y='Odometer (KM)')
 
 # Create a histogram of the 'Odometer (KM)' column
-
+car_sales['Odometer (KM)'].plot.hist()
 
 # Create a histogram of the 'Price' column with 20 bins
-
+car_sales['Price'].plot.hist(bins=20)
 
 # Now we've seen a few examples of plotting directly from DataFrames using the `car_sales` dataset.
 #
 # Let's try using a different dataset.
 
 # Import "../data/heart-disease.csv" and save it to the variable "heart_disease"
-
+heart_disease = pd.read_csv('data/heart-disease.csv')
 
 # View the first 10 rows of the heart_disease DataFrame
-
+heart_disease.head(10)
 
 # Create a histogram of the "age" column with 50 bins
-
+heart_disease['age'].plot.hist(bins=50)
 
 # Call plot.hist() on the heart_disease DataFrame and toggle the
 # "subplots" parameter to True
-
+heart_disease.plot.hist(subplots=True)
 
 # That plot looks pretty squished. Let's change the figsize.
 
 # Call the same line of code from above except change the "figsize" parameter
 # to be (10, 30)
-
+heart_disease.plot.hist(subplots=True, figsize=(10,30))
 
 # Now let's try comparing two variables versus the target variable.
 #
@@ -281,28 +285,27 @@ ax4.hist(np.random.randn(1000))
 # slightly different
 
 # Create DataFrame with patients over 50 years old
-
+over50 = heart_disease[heart_disease['age'] > 50]
 
 # Create the plot
-
-
-# Plot the data
-
+fig, ax = plt.subplots(figsize=(10,5))
+scatter = ax.scatter(x=over50['age'], y=over50['chol'], c=over50['target'])
 
 # Customize the plot
-
+ax.set(xlabel='Age', ylabel='Cholesterol', title='Age versus cholesterol')
+ax.legend(*scatter.legend_elements(), title='Target')
 
 # Add a meanline
-
+ax.axhline(over50['chol'].mean(), linestyle='--')
 # -
 
 # Beatiful, now you've created a plot of two different variables, let's change the style.
 
 # Check what styles are available under plt
-
+plt.style.available
 
 # Change the style to use "seaborn-whitegrid"
-
+plt.style.use('seaborn-whitegrid')
 
 # Now the style has been changed, we'll replot the same figure from above and see what it looks like.
 #
@@ -314,16 +317,20 @@ ax4.hist(np.random.randn(1000))
 # Reproduce the same figure as above with the "seaborn-whitegrid" style
 
 # Create the plot
-
+fig, ax = plt.subplots(figsize=(10,5))
 
 # Plot the data
-
+scatter = ax.scatter(x=over50['age'], y=over50['chol'], c=over50['target'], cmap='winter')
 
 # Customize the plot
+ax.set(xlabel='Age',
+       ylabel='Cholesterol', 
+       title='Age versus cholesterol')
 
+ax.legend(*scatter.legend_elements(), title="Target")
 
 # Add a meanline
-
+ax.axhline(over50['chol'].mean(), linestyle='--')
 # -
 
 # Wonderful, you've changed the style of the plots and the figure is looking different but the dots aren't a very good colour.
@@ -339,25 +346,28 @@ ax4.hist(np.random.randn(1000))
 # Also change the "color" parameter of axhline() to "red"
 
 # Create the plot
-
+fig, ax = plt.subplots(figsize=(10,5))
 
 # Plot the data
-
+scatter = ax.scatter(x=over50['age'], y=over50['chol'], c=over50['target'], cmap='winter')
 
 # Customize the plot
-
+ax.set(xlabel='Age', ylabel='Cholesterol', title='Age versus cholesterol')
+ax.legend(*scatter.legend_elements(), title='Target')
 
 # Add a meanline
-
+ax.axhline(over50['chol'].mean(), linestyle='--', color='red')
 # -
 
 # Beautiful! Now our figure has an upgraded color scheme let's save it to file.
 
+# +
 # Save the current figure using savefig(), the file name can be anything you want
-
+# fig.savefig('some_path_here')
+# -
 
 # Reset the figure by calling plt.subplots()
-
+fig, ax = plt.subplots()
 
 # ## Extensions
 #
