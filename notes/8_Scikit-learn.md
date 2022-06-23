@@ -9,4 +9,9 @@ Machine learning & Data science Bootcamp
 * it has methods to evaulate your ML models
 * it has very well designed API
 
+### Scikit-learn workflow:
+
 ![sklearn-workflow-title](https://user-images.githubusercontent.com/74961891/175291079-f582ef0a-a556-4014-86c4-43f60ae3f884.png)
+
+### Scikit-learn cheatsheet:
+
