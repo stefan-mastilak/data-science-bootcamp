@@ -16,7 +16,7 @@ notebook_save:
 	jupytext --output notebooks/notebooks_py/numpy_introduction.py notebooks/numpy_introduction.ipynb
 	jupytext --output notebooks/notebooks_py/numpy_exercises.py notebooks/numpy_exercises.ipynb
 	jupytext --output notebooks/notebooks_py/matplotlib_introduction.py notebooks/matplotlib_introduction.ipynb
-	jupytext --output notebooks/notebooks_py/matplotlib-exercises.py notebooks/matplotlib-exercises.ipynb
+	jupytext --output notebooks/notebooks_py/matplotlib_exercises.py notebooks/matplotlib_exercises.ipynb
 	jupytext --output notebooks/notebooks_py/sklearn_introduction.py notebooks/sklearn_introduction.ipynb
 
 notebook_load:
@@ -25,5 +25,5 @@ notebook_load:
 	jupytext --to notebook notebooks/notebooks_py/numpy_introduction.py
 	jupytext --to notebook notebooks/notebooks_py/numpy_exercises.py
 	jupytext --to notebook notebooks/notebooks_py/matplotlib_introduction.py
-	jupytext --to notebook notebooks/notebooks_py/matplotlib-exercises.py
+	jupytext --to notebook notebooks/notebooks_py/matplotlib_exercises.py
 	jupytext --to notebook notebooks/notebooks_py/sklearn_introduction.py
