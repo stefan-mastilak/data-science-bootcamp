@@ -2,7 +2,7 @@
 Machine learning & Data science Bootcamp
 ----------------------------------------
 
-How we will proceed:
+# How we will proceed:
 --------------------
 1) Create a framework
     * general framework based on the above schema
@@ -16,7 +16,7 @@ How we will proceed:
     * create a projects to build portfolio of the skills and tools
    
 
-General idea for machine learning framework:
+# General idea for machine learning framework:
 --------------------------------------------
 
 ![mlf](https://user-images.githubusercontent.com/74961891/175297135-b742c0e2-95ef-4c7c-97aa-e8f0c94cd6e1.png)
@@ -51,9 +51,9 @@ General idea for machine learning framework:
    * how could we improve?
    * what can we try next?
 
-################################################################################################################
+----------------------------------------
 
-## 1) Problem definition
+# 1) Problem definition
 
 Types of machine learning problems:
 -----------------------------------
@@ -108,9 +108,9 @@ Types of machine learning problems:
    * Example: Good example is teaching algorithm to play chess. If computer wins, algorithm will learn moves that led 
      to win. Board is a space and actions are movements of pieces on the chess board.
      
-################################################################################################################
+----------------------------------------
 
-## 2) Data
+# 2) Data
 
 Different types of data:
 ------------------------
@@ -128,20 +128,14 @@ Different types of data:
    * static - data that doesn't change over time (csv files, etc.)
    * streaming - data that are constantly changing over time 
 
-### Data science workflow:
-   * Input - Static data
-   * Jupyter notebook
-   * Data analysis - Pandas 
-   * Data visualisation - Matplotlib
-   * Building a model - Scikitlearn
+![5](https://user-images.githubusercontent.com/74961891/175299659-73d53f4d-6c2c-4fbf-8d0e-c6e8edee144c.png)
 
-################################################################################################################
+----------------------------------------
 
-## 3) Evaluation
+# 3) Evaluation
    * Problem - What defines success in our case?
    * evaluation metric is a measure of how well machine learning algorithm predicts the future
    * there are different evaluation metrics for different machine learning problems  
-   
 
 ### Different types of metrics for Classification:
    * Accuracy
@@ -157,9 +151,9 @@ Different types of data:
    * Precision at K 
    * Example: K is a number - top 10 recommendations for songs made by algorithm
 
-################################################################################################################
+----------------------------------------
 
-## 4) Features
+# 4) Features
    * Known information about the data are called features
    * Process of working with features is called feature engineering
    * Ideal scenario is to have data with the same features
@@ -183,10 +177,11 @@ Different types of data:
      We call those data feature variables. We want to use feature variables to predict target variables - in our case
      target variable is a decision if patient have heart disease or not (yes/no)
      
+![8](https://user-images.githubusercontent.com/74961891/175301881-28560a75-3bcc-45fc-996b-ddd19b252e5c.png)
 
-##########################################################################################################
+----------------------------------------
 
-## 5) Modelling
+# 5) Modelling
    * Problem - What model should we use based on our problem definition and data?
    * Generalisation - ability of machine learning model to perform well on data it hasn't seen before 
    * Data split:
@@ -204,6 +199,7 @@ Different types of data:
      * When things go wrong - If your final exam will be same as the practice exam, everybody in the class will
        pass the math exam with top marks. But, did the students really learn anything?
      
+![9](https://user-images.githubusercontent.com/74961891/175305046-3ef96660-6116-49c1-b68c-12e0a3bc40c1.png)
 
 ### a) Choosing and training a model
    * Dataset: training data
@@ -248,6 +244,7 @@ Different types of data:
          * Great performance on the training data but poor performance on test data means your model doesn’t generalize well. Your model may be overfitting the training data
          * Data leakage - happens when some of your test data leaks into your training data, which results in overfitting 
    
+![7](https://user-images.githubusercontent.com/74961891/175304305-b3c361a3-7d63-4b65-9576-93d14fb16d51.png)
 
    * Fixes for underfitting:
       * Try more advanced model
@@ -256,22 +253,32 @@ Different types of data:
       * Train longer
        
 
-   * Fixes for underfitting:
+   * Fixes for overfitting:
       * Collect more data
       * Try less advanced model
 
- ![image](https://user-images.githubusercontent.com/74961891/167783433-2431b6e8-1173-4207-a338-39b0a52d3dd9.png)
 
    * Comparing of models:
      * Make sure you're comparing apples with apples and oranges with oranges
      * Meaning that it make sense to compare different models performances that were trained with the same data
      * One best performance metric does not equal best model
     
+----------------------------------------
 
-##########################################################################################################
-
-## 6) Experimentation
+# 6) Experimentation
    * Problem - What have we tried and what else we can try?
       * This is iterative process that starts at stage 1 (problem definition) and ends at stage 5 (modeling)
       * Try different model
       * Try to change parameters slightly
+      
+----------------------------------------
+
+# Data science workflow:
+   * Input - Static data
+   * Jupyter notebook
+   * Data analysis - Pandas 
+   * Data visualisation - Matplotlib
+   * Building a model - Scikitlearn
+
+
+![4](https://user-images.githubusercontent.com/74961891/175299292-749c8152-2807-4eb9-ba0a-fc5ef9370e72.png)
