@@ -19,6 +19,8 @@ How we will proceed:
 General idea for machine learning framework:
 --------------------------------------------
 
+![mlf](https://user-images.githubusercontent.com/74961891/175297135-b742c0e2-95ef-4c7c-97aa-e8f0c94cd6e1.png)
+
 1) Problem definition
    * supervised or unsupervised learning?
    * classification or regression problem?
@@ -49,14 +51,14 @@ General idea for machine learning framework:
    * how could we improve?
    * what can we try next?
 
-![6-step-ml-framework](https://user-images.githubusercontent.com/74961891/167846239-2886a2b7-e756-4f02-a19b-993487b2de9c.png)
-
 ################################################################################################################
 
 ## 1) Problem definition
 
 Types of machine learning problems:
 -----------------------------------
+
+![2](https://user-images.githubusercontent.com/74961891/175298113-7f6b06e9-f222-4134-a33b-c5c715fa5d7c.png)
 
 ### a) Supervised learning
    * data with labels ("I know my inputs and outputs")
@@ -77,7 +79,6 @@ Types of machine learning problems:
    * Problem - How much will this house sell for? Or How many people will buy this app?
    * In general, we're trying to predict a number here
    * like number of days, sell price of the house, number of clicks or website visits, etc.
-
 
 ### b) Unsupervised learning
    * data has no labels ("I'm not sure about the outputs, but I have inputs")
