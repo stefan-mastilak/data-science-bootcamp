@@ -12,35 +12,29 @@
 #     name: python3
 # ---
 
-# # Scikit-learn introduction
+# # Scikit-learn workflow
 #
-# This notebook demonstrates some of the most useful functions of the Sklearn library
+# This notebook demonstrates end-to-end Sklearn simple workflow.
 #
-# What we're going to cover:
-#
-# 0) End-to-end Scikit-learn workflow
 # 1) Getting data ready
 # 2) Choose the right estimator/algorythm for our problems
 # 3) Fit the model/algoryth and use it to make predictions on our data
 # 4) Evaulating model
 # 5) Improve model
 # 6) Save and load a trained model
-# 7) Putting it all together
 
-# +
-# STANDARD IMPORTS:
+# #### Standard imports|
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 # %matplotlib inline
-# -
 
 # ### 1) Get the data ready
 
 # 1) Get the data:
 heart_disease = pd.read_csv('data/heart-disease.csv')
-heart_disease
+heart_disease.head()
 
 # +
 # create x (features matrix)

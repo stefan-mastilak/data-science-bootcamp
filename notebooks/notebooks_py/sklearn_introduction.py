@@ -18,7 +18,6 @@
 #
 # What we're going to cover:
 #
-# 0) End-to-end Scikit-learn workflow
 # 1) Getting data ready
 # 2) Choose the right estimator/algorythm for our problems
 # 3) Fit the model/algoryth and use it to make predictions on our data
@@ -27,96 +26,70 @@
 # 6) Save and load a trained model
 # 7) Putting it all together
 
-# +
-# STANDARD IMPORTS:
+# #### Standard imports
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 # %matplotlib inline
-# -
 
-# ### 1) Get the data ready
+# ## 1) Get the data ready
+#
+# Three main things we have to do:
+# * Split the data into features and labels (X and Y)
+# * Filling (imputing) or disregarding missing values 
+# * Converting non-numerical values to numerical values (Feature encoding)
 
-# 1) Get the data:
+# 1) Load the data from CSV file:
 heart_disease = pd.read_csv('data/heart-disease.csv')
-heart_disease
+heart_disease.head()
 
-# +
 # create x (features matrix)
 x = heart_disease.drop('target', axis=1)
 
-# create y (labels)
+# create y (labels matrix)
 y = heart_disease['target']
-# -
 
-# ### 2) Choose the right model and hyperparameters
+# #### 1.0) Split the data into training and test sets:
 
-# +
-# import classification machine learning model from sklearn
-
-from sklearn.ensemble import RandomForestClassifier
-clf = RandomForestClassifier(n_estimators=100)
-
-# We'll keep the default hyperparameters
-clf.get_params()
-# -
-
-# ### 3) Fit the model to the training data
-
-# +
+# data split
 from sklearn.model_selection import train_test_split
-
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
-# -
 
-clf.fit(x_train, y_train);
+# check the split dataset shapes:
+x_train.shape, x_test.shape, y_train.shape, y_test.shape
 
-y_preds = clf.predict(x_test)
-y_preds
+# #### 1.1) Make sure it's all numerical data
 
-# ### 4) Evaulate the model on training data and test data
-
-# check model score on training data
-clf.score(x_train, y_train)
-
-# check model score on test data
-clf.score(x_test, y_test)
+# Load car sales data
+car_sales = pd.read_csv('data/car-sales-extended.csv')
+car_sales.head()
 
 # +
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+# Split into x and y:
+x = car_sales.drop('Price', axis=1)
+y = car_sales['Price']
 
-print(classification_report(y_test, y_preds))
+# IMPORTANT: Model cannot deal with strings - we need to transform categories to the numbers
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+categorical_features = ['Make', 'Colour', 'Doors']
+one_hot = OneHotEncoder()
+transformer = ColumnTransformer([('one_hot', 
+                                  one_hot, 
+                                  categorical_features)],
+                               remainder='passthrough')
+transformed_x = transformer.fit_transform(x)
+pd.DataFrame(transformed_x).head()
 # -
 
-confusion_matrix(y_test, y_preds)
-
-accuracy_score(y_test, y_preds)
-
-# ### 5) Improve a model
-#
-# Try different amount of n_estimators
-
-# +
+# Build a model:
 np.random.seed(42)
-
-for i in range(10,100,10):
-    print(f'Tryting model with {i} estimators..')
-    clf = RandomForestClassifier(n_estimators=i).fit(x_train, y_train)
-    print(f'Model accuracy on test set: {(clf.score(x_test, y_test) * 100).round(2)}%')
-    print("")
-
-# -
-
-# ### 6) Save a model and load it
-
-# +
-import pickle
-
-pickle.dump(clf, open('models/random_forest_model_1.pkl', 'wb'))
-# -
-
-loaded = pickle.load(open('models/random_forest_model_1.pkl', 'rb'))
-loaded.score(x_test, y_test)
+x_train, x_test, y_train, y_test = train_test_split(transformed_x, y, test_size=0.2)
+from sklearn.ensemble import RandomForestRegressor
+model = RandomForestRegressor()
+model.fit(x_train, y_train)
+model.score(x_test, y_test)
 
 
