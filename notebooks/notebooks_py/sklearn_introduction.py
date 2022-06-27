@@ -35,4 +35,15 @@ heart_disease = pd.read_csv('data/heart-disease.csv')
 heart_disease
 
 
+# +
+# create x (features matrix)
+x = heart_disease.drop('target', axis=1)
+
+# create y (labels)
+y = heart_disease['target']
+# -
+
+# 2) Choose the right model and hyperparameters
+from sklearn.ensemble import RandomForestClassifier
+
 
