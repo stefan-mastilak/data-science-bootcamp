@@ -17,7 +17,7 @@ Machine learning & Data science Bootcamp
 
 ```python
 # Imports:
-%matplotlib inline
+%matplotlib inline  # this line of code ensures that your plots will appear in notebook
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np

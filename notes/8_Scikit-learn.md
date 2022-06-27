@@ -9,7 +9,7 @@ Machine learning & Data science Bootcamp
 * it has methods to evaulate your ML models
 * it has very well designed API
 
-### Scikit-learn algorythm cheat-sheet:
+### Scikit-learn algorithm cheat-sheet:
 
 ![sklearn-ml-map](https://user-images.githubusercontent.com/74961891/175296124-1816827f-29cc-46ac-a137-3959ccd466b8.png)
 
@@ -28,3 +28,8 @@ Machine learning & Data science Bootcamp
 6) Save and load a trained model
 7) Putting it all together
 
+## 1) Getting our data ready
+Three main things we have to do:
+* Split the data into features and labels (X and Y)
+* Filling (imputing) or disregarding missing values 
+* Converting non-numerical values to numerical values (Feature encoding)
