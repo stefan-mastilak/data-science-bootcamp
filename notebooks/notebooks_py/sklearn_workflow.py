@@ -112,5 +112,3 @@ pickle.dump(clf, open('models/random_forest_model_1.pkl', 'wb'))
 
 loaded = pickle.load(open('models/random_forest_model_1.pkl', 'rb'))
 loaded.score(x_test, y_test)
-
-
