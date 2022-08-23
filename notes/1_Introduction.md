@@ -11,6 +11,8 @@ Machine learning:
 - ML algorithm finds patterns in data to solve future problems
 
 
+![ml_general](https://user-images.githubusercontent.com/74961891/186092656-99754b4c-6e79-4707-bfc8-522191c7a863.png)
+
 Machine learning types:
 -----------------------
 
